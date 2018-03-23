@@ -71,6 +71,7 @@ public class Chromosom {
                     vector2[i]=tmp;
                 }
             }
+            //System.out.println("----------naprawa");
         }
 
         Chromosom child1 = new Chromosom(vector1,this.flowMatrix,this.distanceMatrix);
@@ -81,9 +82,31 @@ public class Chromosom {
         return crossovers;
     }
 
-    public  Chromosom mutation(){
-
+    public  Chromosom mutation(double pm){
         int[] mutateVector= Arrays.copyOf(this.vector,this.vector.length);
+
+        /*System.out.println("przedmutacja"+Arrays.toString(mutateVector));
+        for (int i = 0; i <vector.length ; i++) {
+            if(Math.random()<=pm){
+                int tmp=vector[i];
+                if(i==vector.length-1){
+                    mutateVector[i]=vector[0];
+                    mutateVector[0]=tmp;
+                } else {
+                    System.out.println("-----------");
+                    System.out.println(vector[i+1]);
+                    System.out.println(tmp);
+                    System.out.println("-----------");
+                    mutateVector[i]=vector[i+1];
+                    mutateVector[i+1]=tmp;
+                }
+            }
+        }
+        System.out.println("pomutacji"+Arrays.toString(mutateVector));*/
+      //  System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+      //  System.out.println(Arrays.toString(vector));
+      //  System.out.println(Arrays.toString(mutateVector));
+        //brac pierwszy gen losowac jeden
 
         int px;
         int py;
@@ -101,5 +124,6 @@ public class Chromosom {
         mutateVector[py]=this.vector[px];
 
         return new Chromosom(mutateVector,this.flowMatrix,this.distanceMatrix);
+
     }
 }

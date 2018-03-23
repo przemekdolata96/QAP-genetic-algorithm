@@ -29,14 +29,14 @@ public class ReadFile {
         for (int i = 0; i < length; i++) {
             for (int j = 0; j < length; j++) {
                 int x=scanner.nextInt();
-                flowtMatrix[i][j] = x;
+                distanceMatrix[i][j] = x;
             }
         }
 
         for (int i = 0; i < length; i++) {
             for (int j = 0; j < length; j++) {
                 int x=scanner.nextInt();
-                distanceMatrix[i][j] = x;
+                flowtMatrix[i][j] = x;
             }
 
         }
